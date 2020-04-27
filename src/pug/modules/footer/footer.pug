@@ -1,0 +1,18 @@
+script(type="text/x-template")#modal-template
+  transition(name="modal")
+    .modal.modal-mask
+      .modal-wrapper(
+        @click="$emit('close')"
+      )
+        .modal-container(
+          @click.stop
+        )
+          button.modal-close(@click="$emit('close')")
+            +icon('close')
+          .modal-header
+            .modal__title
+              slot(name="header")
+          .modal-body
+            slot(name="body")
+          .modal-footer
+            slot(name="footer")

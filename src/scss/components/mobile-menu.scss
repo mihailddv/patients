@@ -1,0 +1,26 @@
+.menu-icon {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  span {
+    display: block;
+    margin-bottom: 5px;
+    width: 28px;
+    height: 2px;
+    background: #000;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@include tablets() {
+  .menu-icon {
+    display: none;
+  }
+}

@@ -1,0 +1,52 @@
+%button {
+  // padding: 10px;
+  max-width: 100%;
+  text-align: center;
+  // border: none;
+  outline: none;
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: none;
+  transition: .3s;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.button {
+  @extend %button;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button-action {
+  @extend .button;
+
+  position: relative;
+  padding: 0 1rem;
+  color: #fff;
+  height: 48px;
+  font-size: 13px;
+  background: $primary-color;
+  border-radius: $borderRadius / 2;
+  font-weight: bold;
+  transition: .3s;
+}
+
+@include desktop() {
+  .button {
+    &-action {
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}

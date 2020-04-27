@@ -1,0 +1,69 @@
+modal.modal-order(
+  v-if="modals.isModalOrder"
+  @close="closeModal('modalOrder')"
+  v-cloak
+)
+  <div slot="header">Личные данные</div>
+  <div slot="body">
+    form
+
+      .modal-section
+        .risk
+          .risk__title Факторы риска
+          .risk__info Эта информация поможет разработать для вас индивидуальный план регулярных обследований, подбирать акции и полезные статьи
+
+      .modal-section
+        .modal-section__caption
+          h3.modal-section__title Курение
+        Formradio(
+          v-for="item in orderData.smoking"
+          :key="item.id"
+          :text="item.text"
+        )
+
+      .modal-section.modal-order__search
+        .modal-section__caption
+          h3.modal-section__title Хронические заболевания
+        .modal-section__content
+          .modal-order__search-input
+            Forminput(
+              text="Начните вводить название"
+            )
+          .modal-order__search-list
+            Searchitem(
+              v-for="item in orderData.search"
+              :key="item.id"
+              :text="item.text"
+            )
+
+      .modal-section.modal-section--text
+        .information
+          .information__title Наследственность
+          .information__text Какие из этих болезней были у ваших ближайших родственников (родителей, братьев, сестёр, бабушек, дедушек)? Это может влиять на вашу предрасположенность 
+
+
+      .modal-section.modal-section--double
+        .modal-section.modal-section__list
+          .modal-section__caption
+            h3.modal-section__title Мужчины
+          Formcheckbox(
+            v-for="item in orderData.men"
+            :key="item.id"
+            :text="item.text"
+          )
+
+        .modal-section.modal-section__list
+          .modal-section__caption
+            h3.modal-section__title Женщины
+          Formcheckbox(
+            v-for="item in orderData.women"
+            :key="item.id"
+            :text="item.text"
+          )
+  </div>
+  <div slot="footer">
+    .modal-section
+      button.modal-order__send(
+        @click.prevent="sendOrder()"
+      ) Добавить
+  </div>

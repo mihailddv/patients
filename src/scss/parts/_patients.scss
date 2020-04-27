@@ -1,0 +1,115 @@
+.patients {
+  &__content {
+    max-width: 846px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    @include shadow(shadow1);
+    @include blockDecor;
+
+    padding: 45px 15px;
+    background: #fff;
+  }
+
+  &__caption {
+    padding: 15px 0;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__pic {
+    @include flex-center;
+
+    padding: 0 5px;
+    margin-bottom: 60px;
+  }
+
+  &__desc {
+    margin-bottom: 2rem;
+    padding: 0 10px;
+    text-align: center;
+
+    &-title {
+      margin-bottom: 1rem;
+      font-size: 22px;
+      line-height: 32px;
+    }
+
+    &-text {
+      margin-bottom: 2rem;
+      color: $font-color-light;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__action {
+    text-align: center;
+  }
+
+  &__btn {
+    @extend .button-action;
+
+    min-width: 285px;
+  }
+}
+
+@include _tablets {
+  .patients {
+    &__container {
+      padding: 0;
+    }
+
+    &__caption {
+      padding-left: 15px;
+    }
+  }
+}
+
+@include tablets {
+  .patients {
+    padding: 50px 0;
+
+    &__info {
+      padding-top: 28px;
+      padding-bottom: 28px;
+    }
+
+    &__pic {
+      margin-bottom: 54px;
+    }
+
+    &__caption {
+      margin-bottom: 12px;
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__desc {
+      max-width: 90%;
+      margin: 0 auto 42px;
+
+      &-title {
+        margin-bottom: 1.5rem;
+        font-size: 26px;
+      }
+
+      &-text {
+        font-size: 1rem;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .patients {
+    padding: 90px 0;
+  }
+}

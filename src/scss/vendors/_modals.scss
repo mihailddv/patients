@@ -1,0 +1,159 @@
+.modal {
+  &-mask {
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $overlayBg;
+    overflow: hidden;
+    transition: opacity .3s ease;
+  }
+
+  &-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  &-wrapper {
+    min-height: 100%;
+    // display: table-cell;
+    // vertical-align: middle;
+  }
+
+  &-container {
+    position: relative;
+    // width: 95%;
+    // top: 5%;
+    // max-width: 379px;
+    margin: 0px auto;
+    // padding: 25px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all .3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+    // border-radius: 10px;
+  }
+
+  &-header {
+    @include shadow(shadow1);
+    @extend .modal-padding;
+
+    text-align: center;
+    font-weight: 600;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &-body {
+    @extend .modal-padding;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &-footer {
+    @extend .modal-padding;
+
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &-close {
+    @include flex-center;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+
+    svg {
+      // position: absolute;
+      // top: 5px;
+      // left: 5px;
+      width: 14px;
+      height: 14px;
+      fill: $font-color;
+    }
+
+    &:hover {
+      svg {
+        fill: red;
+      }
+    }
+  }
+
+}
+
+.modal-open .modal-mask {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@include tablets {
+  .modal {
+    &-header {
+      padding-top: 2rem;
+      padding-bottom: 12px;
+      box-shadow: none;
+      text-align: left;
+    }
+
+    &-footer {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      border-top: 1px solid #dee1ed;
+    }
+
+    &-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    &-wrapper {
+      padding-top: 2.5%;
+      padding-bottom: 2.5%;
+    }
+
+    &-container {
+      max-width: 763px;
+      border-radius: $borderRadius;
+    }
+
+    &-close {
+      left: initial;
+      right: 30px;
+      top: 30px;
+    }
+  }
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+.modal {
+  &-enter {
+    opacity: 0;
+  }
+
+  &-leave-active {
+    opacity: 0;
+  }
+
+  &-enter,
+  &-leave-active {
+    .modal-container {
+      transform: scale(1.1);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.information {
+  &__title {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: $font-color-light;
+  }
+}

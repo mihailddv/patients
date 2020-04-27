@@ -1,0 +1,97 @@
+.modal {
+  &-section {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--double {
+      margin-bottom: 1.5rem;
+    }
+
+    &--text {
+      margin-bottom: 1rem;
+    }
+
+    &__list {
+      margin-bottom: 34px;
+    }
+
+    &__caption {
+      margin-bottom: 18px;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.modal-order {
+  &__send {
+    @extend .button-action;
+
+    width: 100%;
+  }
+
+  &__search {
+    &-input {
+      margin-bottom: 1rem;
+    }
+
+    &-list {
+      @include flex-row;
+
+      flex-wrap: wrap;
+      margin-top: -0.5rem;
+      margin-left: -0.5rem;
+
+      .search-item {
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .modal-section {
+      &__caption {
+        margin-bottom: 4px;
+      }
+    }
+  }
+}
+
+@include tablets {
+  .modal {
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    &-order {
+      &__send {
+        width: initial;
+        min-width: 144px;
+      }
+    }
+
+    &-section {
+      &--double {
+        display: flex;
+
+        .modal-section {
+          width: 49%;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

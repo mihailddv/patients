@@ -1,0 +1,18 @@
+.patients__container.container
+  .patients__content
+    .patients__caption
+      h1.patients__title Информация о пациентах
+    .patients__info
+      .patients__pic
+        img(src="/img/working.svg", alt="Информация о пациентах")
+      .patients__desc
+        h2.patients__desc-title Заполните свой профиль и получите 100 баллов
+        p.patients__desc-text Заполните базовую информацию о себе, чтобы мы могли подбирать для вас интересные акции и статьи. Информация о пациенте используется только для автозаполнения формы записи и не видна другим пользователям.
+      .patients__action
+        button.patients__btn(
+          @click="showModal('modalOrder')"
+        )
+          span Перейти к заполнению
+          Bonus(
+            :count="100"
+          )
