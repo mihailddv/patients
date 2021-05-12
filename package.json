@@ -15,7 +15,7 @@
     "isomorphic-fetch": "^2.2.1",
     "nodelist-foreach-polyfill": "^1.2.0",
     "normalize.css": "^8.0.1",
-    "swiper": "^5.3.8",
+    "swiper": "^6.5.1",
     "vue": "^2.6.11"
   },
   "devDependencies": {
